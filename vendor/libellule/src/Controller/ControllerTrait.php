@@ -9,6 +9,8 @@
 namespace Libellule\Controller;
 
 
+use Doctrine\DBAL\Connection;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 trait ControllerTrait
@@ -26,5 +28,36 @@ trait ControllerTrait
 
         # 4. Retour de la réponse à Core
         return $response;
+    }
+
+    /** Génération d'une URL depuis le Controller
+     * @param string $route
+     * @param array $parameters
+     * @return string
+     *  */
+    public function generateUrl(string $route, array $parameters = array()) : string
+    {
+        return $this->container->get('router')->generateUrl($route, $parameters);
+    }
+
+    public function redirect(string $url): RedirectResponse
+    {
+        return new RedirectResponse($url);
+    }
+
+    /**
+     * Redirige l'utilisateur sur la route.
+     * @param strin $route
+     * @param array $parameters
+     * @return RedirectResponse
+     */
+    public function redirectToRoute(strin $route, array $parameters = array()): RedirectResponse
+    {
+        $this->redirect( $this->generateUrl($route, $parameters) );
+    }
+
+    protected function getDoctrine(): Connection
+    {
+        return $this->container->get('doctrine');
     }
 }

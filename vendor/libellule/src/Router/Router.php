@@ -31,23 +31,31 @@ class Router
 
     public function matcher(Request $request): Response
     {
-        // Mise en Place du BasePath
+        # Mise en Place du BasePath
         $this->router->setBasePath($request->getBaseUrl());
 
-        // Cherche une correspondance entre lURL
-        // et notre tableau de route.
+        #Cherche une correspondance entre l'URL
+        #et notre tableau de route.
+
         $match = $this->router->match();
 
+        if ($match) {
 
-        // Si il y a une correspondance on execute le controller et l'action.
-        if ($match){
-            $target = explode('::', $match['target']);
+            $target = explode('::',$match['target']);
             $controller = new $target[0];
             $action = $target[1];
-            return call_user_func_array([$controller, $action], $match['params']);
-        }else{
-            return new Response('Erreur 404', Response::HTTP_NOT_FOUND);
+
+
+            # Execution du Controller
+            # return $controller->$action();
+
+            return call_user_func_array([$controller,$action],$match['params']);
+
         }
+    }
+    public function generateUrl(string $routeName, array $params)
+    {
+        return $this->router->generate($routeName, $params);
     }
 
 }

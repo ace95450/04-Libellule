@@ -1,8 +1,9 @@
-{% include 'layout.html.twig' %}
+{% extends "layout.html.twig" %}
 
 {% block title %}
-    TEST
+    Page Catégorie
 {% endblock %}
+
 {% block content %}
     <div class="row">
         <!--colleft-->
@@ -16,7 +17,7 @@
                     <div class="row">
                         <div class="col-md-5 col-sm-5 col-xs-12">
                             <a href="#">
-                                <img alt="" src="images/product/2.jpg">
+                                <img alt="" src="{{asset('images/product/2.jpg')}}">
                             </a>
                         </div>
                         <div class="col-md-7 col-sm-7 col-xs-12">
@@ -47,6 +48,6 @@
             </div>
 
         </div>
-
+        {% include 'components/_sidebar.html.twig' %}
     </div>
 {% endblock %}

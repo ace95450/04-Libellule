@@ -2,7 +2,6 @@
 
 namespace Libellule\Controller;
 
-
 use Libellule\Core\Container\Container;
 
 abstract class AbstractController

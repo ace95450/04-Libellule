@@ -34,6 +34,12 @@ class ComposerStaticInitc86a1790ba38d8852c31319d565e1e5a
         array (
             'Libellule\\' => 10,
         ),
+        'D' => 
+        array (
+            'Doctrine\\DBAL\\' => 14,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\' => 16,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -72,6 +78,18 @@ class ComposerStaticInitc86a1790ba38d8852c31319d565e1e5a
         'Libellule\\' => 
         array (
             0 => __DIR__ . '/..' . '/libellule/src',
+        ),
+        'Doctrine\\DBAL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL',
+        ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
         ),
         'App\\' => 
         array (
