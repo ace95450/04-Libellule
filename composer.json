@@ -1,0 +1,28 @@
+{
+    "name": "libellule/libellule",
+    "description": "Framework d'apprentissage POO",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris S",
+            "email": "garde95450@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Libellule\\": "vendor/libellule/src",
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/http-foundation": "^3.4",
+        "altorouter/altorouter": "^1.2",
+        "twig/twig": "^2.0",
+        "tightenco/collect": "^5.7"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^3.4"
+    }
+}
